@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ $3 -eq 1 ]; then
+	git branch-history -p `git symbolic-ref --short HEAD` || exit 2
+fi
