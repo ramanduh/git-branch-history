@@ -46,6 +46,12 @@ You may need to change the file permission in order to be executable:
 chmod +x .git/hooks/post-checkout
 ```
 
+### Add a global alias
+
+```sh
+git config --global alias.bh branch-history
+```
+
 
 License
 ----
