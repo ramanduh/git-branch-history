@@ -6,9 +6,9 @@ install_requires = ['PyYaml']
 setuptools.setup(
     name="branch-history",
     version='0.1',
-    description='Get checkout branch history',
+    description='Git checked out branches history',
     install_requires=install_requires,
-    url='http://',
+    url='https://github.com/ramanduh/git-branch-history',
     author="Duhamel Ramanajafy",
     author_email="",
     license='MIT',

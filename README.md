@@ -15,7 +15,7 @@ $ git branch-history 1
 Switched to branch 'improvement'
 ```
 
-The branch history is stored in a YAML file called `.git-branch-checkout-history` located in the repository top level directory.
+The branch history is stored in a YAML file called `.git/branch-checkout-history.yaml` located in the repository top level directory.
 
 # Installation
 

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 
+import branch_history
 from branch_history import BranchHistory
 
 
@@ -12,16 +13,16 @@ class TestBranchHistory(object):
 
         assert bh.history == []
 
-        dest_file = str(tmpdir.join('.git-branch-checkout-history'))
-        assert bh.history_file == dest_file
+        history_file_path = str(tmpdir.join(branch_history.HISTORY_FILENAME))
+        assert bh.history_file == history_file_path
 
         # push one entry in the history
-        assert os.path.exists(dest_file) is False
+        assert os.path.exists(history_file_path) is False
         bh.push('my_branch')
         assert bh.history == ['my_branch']
-        assert os.path.exists(dest_file)
+        assert os.path.exists(history_file_path)
 
-        # delete the current instanche instance and recreate it
+        # delete the current instance and recreate it
         del bh
         bh = BranchHistory(str(tmpdir))
         assert bh.history == ['my_branch']

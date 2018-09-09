@@ -9,7 +9,7 @@ import sys
 import yaml
 
 
-HISTORY_FILENAME = '.git-branch-checkout-history'
+HISTORY_FILENAME = 'branch-checkout-history.yaml'
 
 
 class BranchHistory(object):
@@ -112,7 +112,7 @@ def parse_args():
         '-f',
         help='A directory where to keep the history file',
         dest='history_dir',
-        default=_currentGitDir()
+        default=os.path.join(_currentGitDir(), '.git')
     )
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
