@@ -36,8 +36,11 @@ Here is an example of `.git/hooks/post-checkout`:
 ```
 #!/bin/sh
 
-if [ $3 -eq 1 ]; then
-        git branch-history -p `git symbolic-ref --short HEAD` || exit 2
+if [ "$3" -eq 1 ]; then
+    curr_branch=$(git symbolic-ref --short HEAD || true)
+    if [ -n "$curr_branch" ]; then
+        git branch-history -p "$curr_branch"
+    fi
 fi
 ```
 
